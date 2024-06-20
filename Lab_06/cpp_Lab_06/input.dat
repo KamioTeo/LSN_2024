@@ -1,0 +1,25 @@
+2.0
+50
+1.0
+0.02
+0
+50
+200000
+0
+1
+0
+
+  ReadInput >> temp; // temperatura a cui calcolare i dati termodinamici
+  ReadInput >> nspin;
+  ReadInput >> J;
+  ReadInput >> h; // campo magnetico
+  ReadInput >> metro; // se metropolis=1 altrimenti Gibbs=0
+  ReadInput >> nblk;
+  ReadInput >> nstep;
+  
+  ReadInput >> restart; // 1 se sì (parto da una configurazione iniziale pari a quella finale di un'altra simulazione, salvata su file esterno chiamato config.final)
+  
+  ReadInput >> Tsequence; // se 1 stampa un file con i valori dei dati termodinamici al variare della temperatura, se 0 li stampa alla temperatura data, se è un valore diverso stampa l'errore sull'energia al variare del numero di blocchi
+  
+  ReadInput >> Equilibration; // se 1 allora non esegue il codice ma stampa un file con tutti i valori dell'energia del sistema durante l'equilibrazione
+
