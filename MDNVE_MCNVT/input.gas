@@ -1,0 +1,25 @@
+0
+0
+0.965
+108
+0.05
+5.0
+0.0005
+20
+20000
+0
+0
+0
+
+  ReadInput >> iNVET; 0=MD(NVE) 1=MC(NVT)
+  ReadInput >> restart;
+  ReadInput >> temp; (0.965 /1.2)
+  ReadInput >> npart;
+  ReadInput >> rho;
+  ReadInput >> rcut;
+  ReadInput >> delta; (0.0005/10)
+  ReadInput >> nblk;
+  ReadInput >> nstep; (20000/1000)
+  ReadInput >> PrintAcceptance; // 1 se voglio stampare il valore di accettazione
+  ReadInput >> PrintEqValues; // 1 se voglio stampare i risultati di temperatura ed energia durante l'equilibrazione
+  ReadInput >> PrintEnergy; // 1 se voglio stampare i valori dell'energia dopo l'equilibrazione
