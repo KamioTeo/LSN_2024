@@ -1,0 +1,21 @@
+10000
+1000000
+100
+0.1
+0.0005
+0.0005
+0.25
+0.805113
+0.625067
+0
+
+  ReadInput >> neq; // step per equilibrare
+  ReadInput >> M;  // numero di simulazioni
+  ReadInput >> N; // numero di blocchi
+  ReadInput >> TMax; // Temperatura massima
+  ReadInput >> TMin; // Temperatura minima
+  ReadInput >> TStep; // step Temperatura
+  ReadInput >> deltaSA; // delta per Simulated Annealing
+  ReadInput >> mu; // valore iniziale di mu (1.0 , 0.719)
+  ReadInput >> sigma; // valore iniziale di sigma (0.8 , 0.693)
+  ReadInput >> SA; // se 1 inizia l'algoritmo SA, altrimenti utilizza i valori inseriti di mu e sigma (trovati in precedenza con l'aloritmo SA) per stampare l'analisi a blocchi dell'energia relativa alla funzione d'onda di test con quei parametri. Stampa anche il campionamento di |psi|^2

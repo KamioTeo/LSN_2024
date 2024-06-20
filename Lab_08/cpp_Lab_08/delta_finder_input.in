@@ -1,0 +1,20 @@
+10000
+1000000
+100
+0.6
+1.0
+0.02
+0.4
+0.8
+0.02
+
+
+  ReadInput >> neq; // step per equilibrare
+  ReadInput >> M;  // numero di simulazioni
+  ReadInput >> N; // numero di blocchi
+  ReadInput >> muMin; // valore minimo del range di mu
+  ReadInput >> muMax; // valore massimo del range di mu
+  ReadInput >> muStep; // step del range di mu
+  ReadInput >> sigmaMin; // valore minimo del range di sigma
+  ReadInput >> sigmaMax; // valore massimo del range di sigma
+  ReadInput >> sigmaStep; // step del range di sigma
