@@ -1,0 +1,15 @@
+Da file esterno è possibile caricare in ordine:
+- Numero città da visitare (default 34)
+- shape, se 1 le città sono casualmente distribuite su una circonferenza, se 0 IN un quadrato; il diametro del cerchio e il lato del quadrato sono lunghi 1
+- dimensione della popolazione
+- Numero di generazioni
+
+Il codice esegue 4 diverse mutazioni in sequenza, ognuna con probabilità settabile nel codice (p_mut e p_cross rispettivamente).
+
+La prima generazione è creata permutando casualmente la sequenza iniziale.
+Ogni generazione successiva è costruita a partire da quella precedente aggiungendo 1 o 2 sequenze per volta (in base a se avviene o no il crossover, per il quale tengo i due figli).
+
+Il crossover tra una sequenza selezionata e un'altra avviene solo sotto certe condizioni, dunque il secondo genitore candidato viene preso a partire dal primo individual della popolazione precedente e poi a seguire provando gli altri (finché non avviene). Per fare in modo che il secondo genitore sia una buona configurazione, ogni popolazione viene riordinata in ordine crescente, in modo che i canditati siano sempre buoni. 
+
+Vi è inoltre una probabilità di sopravvivenza del 50% che tiene le configurazioni figlie anche se sono più lunghe del genitore, sia per le mutazioni che per il crossover.
+Con questa probabilità, nel crossover se il secondo figlio ha lunghezza maggiore del primo genitore aggiungo quest'ultimo e il primo figlio, altrimenti aggiungo entrambi i figli.

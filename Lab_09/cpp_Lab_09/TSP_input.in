@@ -1,0 +1,9 @@
+34
+1
+1000
+500
+
+  ReadInput >> N_cities; // Numero città da visitare
+  ReadInput >> shape; // se 1 le città sono casualmente distribuite su una circonferenza, se 0 IN un quadrato; il diametro del cerchio e il lato del quadrato sono lunghi 1
+  ReadInput >> dim_pop; // dimensione della popolazione
+  ReadInput >> N_gen; // Numero di generazioni
