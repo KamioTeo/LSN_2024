@@ -1,0 +1,41 @@
+Gli input modificabili sono identici a quelli dell'esercitazione 9:
+=====================================================================
+Da file esterno è possibile caricare in ordine:
+- Numero città da visitare (default 34)
+- shape, se 1 le città sono casualmente distribuite su una circonferenza, se 0 IN un quadrato; il diametro del cerchio e il lato del quadrato sono lunghi 1
+- dimensione della popolazione
+- Numero di generazioni
+
+Il codice esegue 4 diverse mutazioni in sequenza, ognuna con probabilità settabile nel codice (p_mut e p_cross rispettivamente).
+
+La prima generazione è creata permutando casualmente la sequenza iniziale.
+Ogni generazione successiva è costruita a partire da quella precedente aggiungendo 1 o 2 sequenze per volta (in base a se avviene o no il crossover, per il quale tengo i due figli).
+
+Il crossover tra una sequenza selezionata e un'altra avviene solo sotto certe condizioni, dunque il secondo genitore candidato viene preso a partire dal primo individual della popolazione precedente e poi a seguire provando gli altri (finché non avviene). Per fare in modo che il secondo genitore sia una buona configurazione, ogni popolazione viene riordinata in ordine crescente, in modo che i canditati siano sempre buoni. 
+
+Vi è inoltre una probabilità di sopravvivenza del 50% che tiene le configurazioni figlie anche se sono più lunghe del genitore, sia per le mutazioni che per il crossover.
+Con questa probabilità, nel crossover se il secondo figlio ha lunghezza maggiore del primo genitore aggiungo quest'ultimo e il primo figlio, altrimenti aggiungo entrambi i figli.
+=====================================================================
+
+Vi sono le seguenti modifiche dopo parallelizzazione dell'algoritmo genetico con prodocollo MPI:
+
+- Il Random Number Generator viene modificato per aggiungere un costruttore MPI, che utilizza un seed diverso per ogni core
+
+- Il codice viene ora compilato con mpicxx ed eseguito con mpiexec
+
+- Per eseguire il codice digitare "make run", il numero di processi può essere cambiato dal Makefile alla prima variabile "N_PROCESSES"
+
+- Impostando nel file Input.it shape=2 carico un file di posizioni arbitrarie da chiamare "Positions.dat"
+
+- Settando shape=3 carico le coordinate delle città americane. (Il calcolo della distanza è svolto in un altro modo perché le coordinate sono in longitudine e latitudine. Inoltre nel file delle città americane i loro nomi sono stati modificati per evitare spaziature indesiderate)
+
+- Settando shape=4 carico le coordinate delle città italiane.
+
+- Il numero di processi massimo utilizzabile è 10 e il minimo 2
+
+- Il rank 0 genera ANCHE le coppie di core che comunicano
+(uno per generare le coppie di core che si scambiano gli individual e gli altri due che se li scambiano. Se sono 3 sicuramente gli altri due se li scambiano sempre)
+
+- Modificato il PrintDistance (funzione che stampa tutte le distanze per ogni generazione) in modo di farlo solo alla fine, cosi evito di aprire 1000 stream
+
+- Il file con le sequenze minime e le distanze lo stampo per ogni core (avrò 2xrank files)

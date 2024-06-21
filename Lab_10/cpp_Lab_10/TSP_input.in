@@ -1,0 +1,11 @@
+20
+4
+500
+1000
+20
+
+  ReadInput >> N_cities; // Numero città da visitare (settarlo > 3)
+  ReadInput >> shape; // disposizione delle città: se 0 le genera casualmente IN un quadrato; se 1 su una circonferenza. Il diametro del cerchio e il lato del quadrato sono lunghi 1. Se è 2 carico un file con pisizioni arbitrarie (filenema Positions.dat), se 3 carico le coordinate delle città americane (filename American_capitals.dat), se 4 carico le città italiane (filename cap_prov_ita.dat).
+  ReadInput >> dim_pop; // dimensione della popolazione
+  ReadInput >> N_gen; // Numero di generazioni
+  ReadInput >> N_migr; // Numero di generazioni dopo la quale avviene uno swap di best Individuals
