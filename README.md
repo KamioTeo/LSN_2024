@@ -42,7 +42,7 @@ delta_finder.cpp stampa i valori di mu, sigma, delta, dell'energia calcolata con
 - Nel file "SA.cpp" è implementato il codice che esegue l'algoritmo del Simulated Annealing, i cui parametri sono caricati dal file "SA_input.in". Oltre al numero di step per equilibrare il campionamento della funzione d'onda e il numero di blocchi da utilizzare, è possibile definire il range di temperatura, dalla massima alla minima, e lo step di decrescita. Si inserisce la coppia di parametri mu e sigma da cui far partire l'algoritmo (trovati con il codice precedente) e il valore di delta utile all'algoritmo SA per il campionamento della distribuzione di Boltzmann. <br>
 - L'ultimo parametro booleano permette di utilizzare i valori di mu e sigma inseriti per analizzare quella specifica configurazione, senza effettuare l'algoritmo SA. In questo modo è possibile salvare i dati della distribuzione test trovata con gli specifici valori di mu e sigma che minimizzano l'energia.
 
-###Esercizio 9
+### Esercizio 9
 Da file esterno è possibile caricare in ordine:
 - Numero città da visitare (default 34)
 - shape, se 1 le città sono casualmente distribuite su una circonferenza, se 0 IN un quadrato; il diametro del cerchio e il lato del quadrato sono lunghi 1
