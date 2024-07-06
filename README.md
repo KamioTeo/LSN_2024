@@ -71,4 +71,4 @@ Vi sono le seguenti modifiche dopo parallelizzazione dell'algoritmo genetico con
 - Il rank 0 genera ANCHE le coppie di core che comunicano
 (uno per generare le coppie di core che si scambiano gli individual e gli altri due che se li scambiano. Se sono 3 sicuramente gli altri due se li scambiano sempre)
 - Modificato il PrintDistance (funzione che stampa tutte le distanze per ogni generazione) in modo di farlo solo alla fine, cosi evito di aprire 1000 stream
-- Il file con le sequenze minime e le distanze lo stampo per ogni core (avrò $2 \times $ rank files)
+- Il file con le sequenze minime e le distanze lo stampo per ogni core (avrò $2 \\times $ rank files)
